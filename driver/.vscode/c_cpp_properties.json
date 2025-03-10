@@ -1,0 +1,43 @@
+{
+    "configurations": [
+        {
+            "name": "driver",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/../src/common",
+                "${workspaceFolder}/../src/libshmemcpy/src/include",
+                "${workspaceFolder}/src/",
+                "${workspaceFolder}/../src/buddy/include",
+                "/usr/include",
+                "/usr/include/x86_64-linux-gnu/",
+                "/usr/lib/gcc/x86_64-linux-gnu/12/include",
+                "/usr/src/linux-headers-5.19.0-50-generic/include",
+                "/usr/src/linux-headers-5.19.0-50-generic/include/uapi",
+                "/usr/src/linux-headers-5.19.0-50-generic/include/generated",
+                "/usr/src/linux-headers-5.19.0-50-generic/include/generated/uapi",
+                "/usr/src/linux-headers-5.19.0-50-generic/ubuntu/include",
+                "/usr/src/linux-headers-5.19.0-50-generic/arch/x86/include/",
+                "/usr/src/linux-headers-5.19.0-50-generic/arch/x86/include/uapi",
+                "/usr/src/linux-headers-5.19.0-50-generic/arch/x86/include/generated/uapi",
+                "/usr/src/linux-headers-5.19.0-50-generic/arch/x86/include/generated/"
+            ],
+            "defines": [
+                "KBUILD_MODNAME=\"ivpci\"",
+                "__GNUC__",
+                "__KERNEL__",
+                "MODULE",
+                "BYTE_GRANULAR"
+            ],
+            "compilerPath": "/usr/bin/gcc-12",
+            "cStandard": "c11",
+            "cppStandard": "c++11",
+            "intelliSenseMode": "linux-gcc-x64",
+            "configurationProvider": "ms-vscode.makefile-tools",
+            "compilerArgs": [
+                "-include", "/usr/src/linux-headers-5.19.0-45-generic/include/linux/kconfig.h",
+                "-include", "/usr/src/linux-headers-5.19.0-45-generic/include/linux/compiler_types.h"
+            ]
+        }
+    ],
+    "version": 4
+}

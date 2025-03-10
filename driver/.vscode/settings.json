@@ -1,0 +1,27 @@
+{
+    "files.associations": {
+        "vcxl_shm.h": "c",
+        "buddy_alloc.h": "c",
+        "cxl_dev.h": "c",
+        "circular_queue.h": "c",
+        "output_cacheline.h": "c",
+        "atomic.h": "c",
+        "shmem_obj.h": "c",
+        "common_macro.h": "c",
+        "list.h": "c",
+        "log.h": "c",
+        "jhash.h": "c",
+        "hashtable_api.h": "c",
+        "hashtable.h": "c",
+        "jj_ab_spinlock_64proc.h": "c",
+        "jj_abortable_spinlock.h": "c",
+        "jj_abortable_spinlock_kern.h": "c",
+        "jj_abortable_spin.h": "c",
+        "atomic-long.h": "c",
+        "vcxl_udef.h": "c",
+        "compiler_types.h": "c",
+        "futex.h": "c",
+        "atomic_int_op.h": "c",
+        "vcxl_def.h": "c"
+    }
+}

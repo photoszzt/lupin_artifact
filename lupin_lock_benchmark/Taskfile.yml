@@ -1,0 +1,62 @@
+# https://taskfile.dev
+
+version: '3'
+
+
+tasks:
+  default:
+    cmds:
+      - task --list
+
+  gcc_release:
+    cmds:
+      - mkdir -p build_gcc_release
+      - cd build_gcc_release &&
+        cmake -DCMAKE_C_COMPILER=gcc -D CMAKE_CXX_COMPILER=g++ -DCMAKE_BUILD_TYPE=Release .. &&
+        make -j$(nproc)
+
+  build_gcc_release:
+    desc: "build with gcc in release mode"
+    cmds:
+      - task: gcc_release
+
+  gcc_debug:
+    cmds:
+      - mkdir -p build_gcc_debug
+      - cd build_gcc_debug &&
+        cmake -DCMAKE_C_COMPILER=gcc -D CMAKE_CXX_COMPILER=g++ -DCMAKE_BUILD_TYPE=Debug .. &&
+        make -j$(nproc)
+
+  build_gcc_debug:
+    desc: "build with gcc in debug mode"
+    cmds:
+      - task: gcc_debug
+
+  clang_release:
+    cmds:
+      - mkdir -p build_clang_release
+      - cd build_clang_release &&
+        cmake -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_BUILD_TYPE=Release .. &&
+        make -j$(nproc)
+
+  build_clang_release:
+    desc: "build with clang in release mode"
+    cmds:
+      - task: clang_release
+
+  clang_debug:
+    cmds:
+      - mkdir -p build_clang_debug
+      - cd build_clang_debug &&
+        cmake -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_BUILD_TYPE=Debug .. &&
+        make -j$(nproc)
+
+  build_clang_debug:
+    desc: "build with clang in debug mode"
+    cmds:
+      - task: clang_debug
+
+  clean_user_build:
+    desc: "remove gcc and clang builds"
+    cmds:
+      - rm -rf build_clang_debug build_clang_release build_gcc_debug build_gcc_release

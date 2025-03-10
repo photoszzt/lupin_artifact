@@ -1,0 +1,24 @@
+CompileFlags:
+    Compiler: clang-18
+    Add: [
+        -I/usr/include,
+        -I/usr/include/x86_64-linux-gnu/,
+        -I/usr/lib/gcc/x86_64-linux-gnu/12/include,
+        -I/usr/src/linux-headers-5.19.0-50-generic/include,
+        -I/usr/src/linux-headers-5.19.0-50-generic/include/uapi,
+        -I/usr/src/linux-headers-5.19.0-50-generic/include/generated,
+        -I/usr/src/linux-headers-5.19.0-50-generic/include/generated/uapi,
+        -I/usr/src/linux-headers-5.19.0-50-generic/ubuntu/include,
+        -I/usr/src/linux-headers-5.19.0-50-generic/arch/x86/include/,
+        -I/usr/src/linux-headers-5.19.0-50-generic/arch/x86/include/uapi,
+        -I/usr/src/linux-headers-5.19.0-50-generic/arch/x86/include/generated/uapi,
+        -I/usr/src/linux-headers-5.19.0-50-generic/arch/x86/include/generated/,
+        -I./src, -I../src/buddy/include/, -I../src/libshmemcpy/src/include/,
+        -I../src/common/, -DKBUILD_MODNAME="ivpci", -D__GNUC__, -D__KERNEL__,
+        -DMODULE, -DBYTE_GRANULAR, 
+        -include, /usr/src/linux-headers-5.19.0-45-generic/include/linux/kconfig.h,
+        -include, /usr/src/linux-headers-5.19.0-45-generic/include/linux/compiler_types.h]
+    Remove: [-fconserve-stack, -fno-allow-store-data-races, -mfunction-return=thunk-extern, 
+      -mindirect-branch-cs-prefix, -mindirect-branch-register, -mindirect-branch=thunk-extern, 
+      -mskip-rax-setup, -mpreferred-stack-boundary=3, -mno-fp-ret-in-387, -mrecord-mcount]
+    CompilationDatabase: ./ 

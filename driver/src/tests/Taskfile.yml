@@ -1,0 +1,22 @@
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  default:
+    cmds:
+      - task --list
+
+  build_offsetof:
+    cmds:
+      - gcc -o test_offset_size ./offset_size/test_offset_size.c
+        -I../ -I../../../src/buddy/include/ -I../../../src/common/
+      - gcc -o test_offset_size_jj ./offset_size/test_offset_size.c
+        -DUSE_JJ_AB_LOCK -I../ -I../../../src/buddy/include/
+        -I../../../src/common/
+
+  build_obj_alloc_recs_offset_test:
+    cmds:
+      - gcc -o test_obj_alloc_recs_offset ./test_calc_obj_aloc_recs_from_hdr.c
+        -I../ -I../../../src/buddy/include/ -I../../../src/common/
+
